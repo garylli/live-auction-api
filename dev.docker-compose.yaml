@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres
+    networks:
+      - app-network
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USERNAME: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - 5433:5433
+    command: -p 5433
+networks:
+  app-network:
