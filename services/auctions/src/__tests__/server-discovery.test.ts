@@ -1,11 +1,10 @@
-import { describe, expect, it, test } from "vitest";
+import { describe, expect, it } from "vitest";
 import wrapWithSuperTest from "supertest";
-import { Service } from "../config/service.ts";
-import { configureService } from "../main.ts";
+import { createApp } from "../app.ts";
 
 describe("Service Discovery", () => {
-  const service = configureService();
-  const request = wrapWithSuperTest(service);
+  const app = createApp();
+  const request = wrapWithSuperTest(app);
 
   it("GET non-existent route returns 404", async () => {
     const res = await request.get("/12049812094q");
