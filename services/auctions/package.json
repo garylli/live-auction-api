@@ -2,10 +2,10 @@
   "name": "auctions",
   "version": "1.0.0",
   "description": "",
-  "main": "src/main.ts",
+  "main": "src/server.ts",
   "type": "module",
   "scripts": {
-    "start": "nodemon --exec \"node --experimental-strip-types src/main.ts\"",
+    "start": "nodemon -x node .",
     "test": "NODE_ENV=development vitest"
   },
   "keywords": [],

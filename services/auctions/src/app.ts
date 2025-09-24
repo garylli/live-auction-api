@@ -1,10 +1,10 @@
 import express from "express";
-import { healthCheck } from "./routes/health-check.ts";
+import { discoveryRouter } from "./routes/discovery.ts";
 
 const createApp = () => {
   const app = express();
 
-  app.get("/health", healthCheck);
+  app.use("/", discoveryRouter);
 
   return app;
 };
